@@ -81,7 +81,7 @@ nav {
     background: linear-gradient(90deg, red, blue, aqua, purple, red);
     background-size: 300% 100%;
     animation: moveBG 8s ease-in-out infinite; /* Smooth transition */
-    /* -webkit-background-clip: text; */
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
     margin-right: 10px;
