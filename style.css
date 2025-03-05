@@ -1,0 +1,422 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #0a0a0a, #1c1c3c);
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    overflow-x: hidden;
+    height: 200dvh;
+
+    /* Apply styles to the scrollbar */
+    ::-webkit-scrollbar {
+        width: 1vw; /* Width of the scrollbar */
+    }
+    
+    /* Style the thumb (the draggable part) */
+    ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.5); /* Light color for glassmorphism */
+        border-radius: 10px; /* Round corners */
+    }
+    
+    /* Style the scrollbar track */
+    ::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px; /* Round corners */
+    }
+}
+
+header {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
+    position: relative;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left:calc(2vw - 1px);
+    align-items: center;
+}
+
+/* .left {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 1dvw;
+    min-width: fit-content;
+    background: linear-gradient(45deg, 
+    rgba(255, 0, 0, 0.7),  
+        rgba(0, 0, 255, 0.7),  
+        rgba(0, 255, 255, 0.7),
+        rgba(9, 219, 1, 0.8)   
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fade 1s ease-in linear infinite;
+    pointer-events: none;
+} */
+
+/* @keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+} */
+.left {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    background: linear-gradient(90deg, red, blue, aqua, purple, red);
+    background-size: 300% 100%;
+    animation: moveBG 8s ease-in-out infinite; /* Smooth transition */
+    /* -webkit-background-clip: text; */
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    margin-right: 10px;
+}
+@keyframes moveBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@media (max-width: 640px) {
+    body{
+        overflow-x: hidden;
+        overflow-y: hidden;
+        width: 100dvw;
+    }
+    .left{
+        font-size: 25px;
+    }
+    div ul{
+        width: calc(35% - 40px);
+        gap: 10px !important;
+        height: 150px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    ul pre{
+        font-size: 1em !important;
+    }
+     .card{
+        backdrop-filter: blur(0px) !important;
+
+     }
+     .main1.active {
+        margin-top: 30px;
+     }
+}
+
+
+
+
+.right ul {
+    display:flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.right ul pre {
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-family: monospace;
+}
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: transparent;
+    position: absolute;
+    right: 20px;
+    white-space: pre;
+}
+
+.left::selection{
+    color: #27272E;
+}
+.title::selection, .card p::selection, ul pre::selection{
+    background-color: #27272E;
+}
+
+.menu-icon:active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.menu-icon::selection{
+    background-color: transparent;
+}
+.menu-icon:hover{
+    color: aliceblue;
+}
+@media (min-width: 1050px){
+    .card2{
+        overflow-y: hidden !important;
+    }
+    .container2{
+        top: 20vh !important;
+    }
+    .title{
+        margin-right: 30px;
+    }
+}
+@media (max-width: 1050px){
+    .card{
+        margin-left: 4vw;
+    }
+}
+@media (min-width: 1001px) {
+    .main1{
+        background-color: transparent;
+        display: block;
+        width: calc(101% - 1%);
+    }
+    .container{
+        display: block;
+        position: absolute;
+        top: 200px;
+        margin-left: calc(1vw - 20px);
+        width: calc(50% - 150px);
+    }
+    .card{
+        margin-left: calc(5vw - 2px) !important;
+    }
+    .container2{
+        font-size: 1rem;
+        position: absolute;
+        right: 0px;
+        top: 100px;
+        text-align: start;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        aspect-ratio: 1 / 2;
+        width: calc(40vw - 25px);
+        height: 60vh;
+        margin: 20px calc(8% - 30px);
+        background-color: linear-gradient(135deg, #74ABE2, #5563DE);
+        font-family: Arial, sans-serif;
+    }
+    
+    .card2 {
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 8px 32px 1px rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        padding: 0px 30px;
+        width: calc(101% - 1%);
+        height: fit-content;
+        color: #fff;
+        overflow-y:scroll;
+        overflow-x: hidden;
+        text-align: start;
+        accent-color: yellow;
+        line-height: 25px;
+        text-shadow: -1px 1px 5px #5563DE;
+        font-weight: 500;
+      }
+}
+@media (min-width: 901px) {
+    /* .main1.active {
+        margin-top: 130px;
+     } */
+
+    .main1{
+        background-color: transparent;
+        display: block;
+        width: calc(101% - 1%);
+    }
+    
+    .container{
+        display: block;
+        position: absolute;
+        top: 200px;
+        width: calc(50% - 150px);
+        aspect-ratio: 4 / 2;
+    }
+    .card{
+        margin-left: 4vw;
+    }
+    .container2{
+        font-size: 1rem;
+        position: absolute;
+        right: 20px;
+        top: calc(30vh - 20px);
+        text-align: start;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        aspect-ratio: 1 / 2;
+        width: calc(40vw - 25px);
+        height: 60vh;
+        margin: 20px calc(8% - 30px);
+        background-color: linear-gradient(135deg, #74ABE2, #5563DE);
+        font-family: Arial, sans-serif;
+    }
+    
+    .card2 {
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 8px 32px 1px rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        padding: 0px 30px;
+        width: calc(101% - 1%);
+        height: 100%;
+        color: #fff;
+        overflow-y:scroll;
+        overflow-x: hidden;
+        text-align: start;
+        accent-color: yellow;
+        line-height: 25px;
+        text-shadow: -1px 1px 5px #5563DE;
+        font-weight: 500;
+      }
+}
+
+
+@media (max-aspect-ratio: 1 / 2){
+    .container2{
+        margin-top: -400px !important;
+
+    }
+}
+@media (min-width: 1130px) {
+    .container2{
+        margin-top: 10dvh !important;
+
+    }
+}
+
+
+@media (max-width: 1130px) {
+    .main1.active .container2{
+        position: absolute;
+        right: calc(200px - 10px);
+     }
+    .right ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
+    }
+    .right.active ul {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+    .container{
+        padding-left: 2vw;
+    }
+    .card{
+        width: 80%;
+        margin-left: auto;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .right{
+        display: inline-block;
+    }
+    .right ul {
+        display: none;
+        width: fit-content;
+        flex-direction: column;
+        backdrop-filter: blur(5px);
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
+        z-index: 10;
+    }
+    ul pre{
+        display: block;
+    }
+    ul pre:last-child{
+        border-bottom: none;
+    }
+    /* .container::selection{
+        background-color: transparent;
+    } */
+    .container2{
+        display: none;
+    }
+
+    .right.active ul {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+    .container{
+        padding-left: 2vw;
+    }
+    .card{
+        width: 80%;
+        margin-left: auto;
+    }
+}
+
+.main1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70vh;
+    text-align: center;
+}
+
+.container {
+    transform: perspective(800px) rotateX(15deg);
+    text-align: center;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+    transform: perspective(300px) rotateX(10deg);
+    text-align: end;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
+    width: 300px;
+    text-align: center;
+    transform: perspective(500px) rotateY(10deg);
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: perspective(500px) rotateY(0deg);
+}
