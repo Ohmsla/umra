@@ -289,14 +289,6 @@ nav {
         font-weight: 500;
       }
 }
-
-
-@media (max-aspect-ratio: 1 / 2){
-    .container2{
-        margin-top: -400px !important;
-
-    }
-}
 @media (min-width: 1130px) {
     .container2{
         margin-top: 10dvh !important;
@@ -336,7 +328,35 @@ nav {
         margin-left: auto;
     }
 }
-
+@media (max-width: 432px) {
+    .container{
+        margin-right: calc(5vh - 12px);
+    }
+    body{
+        width: 100vw;
+    }
+    
+}
+@media (max-width: 375px) {
+    
+    .card{
+        width: calc(100vw - 10%);
+    }
+}
+@media (max-width: 360px) {
+    .left{
+        font-size: calc(8vw - 4px);
+    }
+    body{
+        min-width: 100vw;
+    }
+}
+@media (min-width: 1 / 2){
+    body{
+        width: 100vw;
+    }
+    
+}
 
 @media (max-width: 900px) {
     .right{
